@@ -42,7 +42,10 @@ Library.getAllLibrariesInContext = function(context) {
     var libraries = []
     var enumerator = AppController.sharedInstance().librariesController().libraries().objectEnumerator()
     while (library = enumerator.nextObject()) {
-        libraries.push(new Library(context, library))
+        var library = new Library(context, library)
+        if (library.isActive()) {
+            libraries.push(library)
+        }
     }
     return libraries
 }
@@ -66,4 +69,8 @@ Library.prototype.getAllSymbols = function() {
         symbols.push(new Symbol(this._context, this._library, symbol))
     }
     return symbols
+}
+
+Library.prototype.isActive = function() {
+    return this._library.enabled()
 }
