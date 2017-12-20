@@ -1,0 +1,43 @@
+{
+  "author" : "Mattias Eriksson",
+  "commands" : [
+    {
+      "script" : "align.js",
+      "name" : "Align Artboards",
+      "shortcut" : "cmd alt shift A",
+      "handlers" : {
+        "run" : "align"
+      },
+      "identifier" : "align"
+    },
+    {
+      "script" : "uikit.js",
+      "name" : "Generate UI Kit",
+      "handlers" : {
+        "run" : "generateUIKit"
+      },
+      "identifier" : "generateUIKit"
+    },
+    {
+      "script" : "uikit.js",
+      "name" : "Clean config",
+      "handlers" : {
+        "run" : "cleanConfig"
+      },
+      "identifier" : "cleanConfig"
+    }
+  ],
+  "menu" : {
+    "title" : "👨‍🎨 UIKit",
+    "items" : [
+      "align",
+      "generateUIKit",
+      "cleanConfig"
+    ]
+  },
+  "identifier" : "com.materikab.uikit",
+  "version" : "0.0.1",
+  "description" : "Generating a document containing all symbols in your Sketch Libraries.",
+  "authorEmail" : "mattias@materikab.com",
+  "name" : "👨‍🎨 UIKit"
+}
