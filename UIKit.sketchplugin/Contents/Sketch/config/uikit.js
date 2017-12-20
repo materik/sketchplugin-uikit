@@ -8,7 +8,7 @@ function UIKitConfig() {
 }
 
 UIKitConfig.clean = function() {
-    var defaults = NSUserDefaults.standardUserDefaults()
+    var defaults = new UserDefaults(USER_DEFAULTS_KEY)
     defaults.removeKey()
     defaults.removeKey("backgroundColorHex")
     defaults.removeKey("includeLibrariesWithName")

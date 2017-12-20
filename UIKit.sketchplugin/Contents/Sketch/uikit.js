@@ -17,9 +17,11 @@ var generateUIKit = function(context) {
     var alert = new UIKitConfigAlert(_context)
     if (alert.show()) {
         UIKit.generateInContext(_context)
+        Sketch.alert(context, "UIKit was successfully generated")
     }
 }
 
-var cleanConfig = function() {
+var cleanConfig = function(context) {
     UIKitConfig.clean()
+    Sketch.alert(context, "Config was successfully cleaned")
 }

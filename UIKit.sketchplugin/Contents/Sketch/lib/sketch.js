@@ -3,6 +3,10 @@ function Sketch(context) {
     this._doc = context.document;
 }
 
+Sketch.alert = function(context, msg) {
+    new Sketch(context).alert(msg);
+}
+
 Sketch.prototype.addBorderToLayer = function(layer, hex, thickness) {
     var border = layer.style().addStylePartOfType(1);
     border.color = new Color(hex).color
@@ -20,7 +24,7 @@ Sketch.prototype.addFillToLayer = function(layer, hex) {
 
 Sketch.prototype.alert = function(msg) {
     log(msg)
-    this._doc.showMessage("🎨: " + msg);
+    this._doc.showMessage("👨‍🎨: " + msg);
 }
 
 Sketch.prototype.cleanPage = function(page) {
